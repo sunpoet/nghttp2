@@ -899,10 +899,8 @@ int client_select_next_proto_cb(SSL *ssl, unsigned char **out,
 } // namespace
 
 namespace {
-// Use std::vector<std::string>::iterator explicitly, without that,
-// http_parser_url u{} fails with clang-3.4.
-std::vector<std::string> parse_uris(std::vector<std::string>::iterator first,
-                                    std::vector<std::string>::iterator last) {
+template <typename Iterator>
+std::vector<std::string> parse_uris(Iterator first, Iterator last) {
   std::vector<std::string> reqlines;
 
   if (first == last) {
