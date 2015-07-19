@@ -125,7 +125,7 @@ used::
     $ ./configure
     $ make
 
-To compile the source code, gcc >= 4.8.3 or clang >= 3.4 is required.
+To compile the source code, gcc >= 4.8.3 or clang >= 3.5 is required.
 
 .. note::
 
