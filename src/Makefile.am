@@ -170,13 +170,13 @@ nghttpx_LDADD = libnghttpx.a ${LDADD}
 
 if HAVE_MRUBY
 libnghttpx_a_CPPFLAGS += \
-	-I${top_srcdir}/third-party/mruby/include @LIBMRUBY_CFLAGS@
-nghttpx_LDADD += -L${top_builddir}/third-party/mruby/build/lib @LIBMRUBY_LIBS@
+	-I$(top_srcdir)/third-party/mruby/include @LIBMRUBY_CFLAGS@
+nghttpx_LDADD += -L$(top_builddir)/third-party/mruby/build/lib @LIBMRUBY_LIBS@
 endif # HAVE_MRUBY
 
 if HAVE_NEVERBLEED
-libnghttpx_a_CPPFLAGS += -I${top_srcdir}/third-party/neverbleed
-nghttpx_LDADD += ${top_builddir}/third-party/libneverbleed.la
+libnghttpx_a_CPPFLAGS += -I$(top_srcdir)/third-party/neverbleed
+nghttpx_LDADD += $(top_builddir)/third-party/libneverbleed.la
 endif # HAVE_NEVERBLEED
 
 if HAVE_CUNIT
@@ -202,14 +202,14 @@ nghttpx_unittest_LDADD = libnghttpx.a ${LDADD} @CUNIT_LIBS@ @TESTLDADD@
 
 if HAVE_MRUBY
 nghttpx_unittest_CPPFLAGS += \
-	-I${top_srcdir}/third-party/mruby/include @LIBMRUBY_CFLAGS@
+	-I$(top_srcdir)/third-party/mruby/include @LIBMRUBY_CFLAGS@
 nghttpx_unittest_LDADD += \
-	-L${top_builddir}/third-party/mruby/build/lib @LIBMRUBY_LIBS@
+	-L$(top_builddir)/third-party/mruby/build/lib @LIBMRUBY_LIBS@
 endif # HAVE_MRUBY
 
 if HAVE_NEVERBLEED
-nghttpx_unittest_CPPFLAGS += -I${top_srcdir}/third-party/neverbleed
-nghttpx_unittest_LDADD += ${top_builddir}/third-party/libneverbleed.la
+nghttpx_unittest_CPPFLAGS += -I$(top_srcdir)/third-party/neverbleed
+nghttpx_unittest_LDADD += $(top_builddir)/third-party/libneverbleed.la
 endif # HAVE_NEVERBLEED
 
 TESTS += nghttpx-unittest
